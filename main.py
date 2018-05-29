@@ -1,6 +1,6 @@
 import sys
 import smtplib
-
+import os
 
 def imprimirLinha():
     print("========================================")
@@ -18,11 +18,12 @@ def enviarEmail():
     server.quit()
 
 def menu():
+    os.system("cls")
     print("[1] Configurar email e senha")
     print("[2] Configurar mensagem")
     print("[3] Configurar emails alvos")
     sinalEntrada()
-    menuResp = input()
+    menuResp = int(input())
     imprimirLinha()
 
     if menuResp == 1:
@@ -59,7 +60,7 @@ def menu():
 
         print("Deseja continuar? [S/n]")
         sinalEntrada()
-        continuar = sys.stdin.read()
+        continuar = input()
         imprimirLinha()
 
         if continuar == "s" or continuar == "S":
